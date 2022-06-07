@@ -14,7 +14,7 @@ function test(states){
     contarEstado(location, states[1], states[2]);
     mostrarContadores();
     var action_result = reflex_agent(location, state);
-    document.getElementById("log").innerHTML+="<br>Location ".concat(location).concat(` | A->${states[1]} - B->${states[2]} - Action: `).concat(action_result);
+    document.getElementById("log").innerHTML+="<br>Location ".concat(location).concat(` | A->${states[1]} - B->${states[2]} | Action: `).concat(action_result);
     if (action_result == "CLEAN"){
         if (location == "A") states[1] = "CLEAN";
         else if (location == "B") states[2] = "CLEAN";
