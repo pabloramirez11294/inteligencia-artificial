@@ -1,3 +1,6 @@
+// MIT License
+// Copyright (c) 2020 Luis Espino
+
 function reflex_agent(location, state){
     if (state=="DIRTY") return "CLEAN";
     else if (location=="A") return "RIGHT";
@@ -22,9 +25,9 @@ function test(states){
     // si está limpio A y B se ensucia un lugar al azar
     if(states[1] == 'CLEAN' && states[2] == 'CLEAN') ensuciarStates(states);
     console.log("Contador:" + arrayContador)
-    // se verifica que el se pasara por cada estado 2 veces
-    const mayor2 = (currentValue) => currentValue >= 2;
-    if(arrayContador.every(mayor2)) {
+    // se verifica que pase cada estado al menos una vez
+    const mayor = (currentValue) => currentValue > 0;
+    if(arrayContador.every(mayor)) {
         document.getElementById(`titleFinalizado`).innerHTML = 'Finalizado';
         return;
     }
